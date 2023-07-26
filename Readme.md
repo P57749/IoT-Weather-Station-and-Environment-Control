@@ -1,48 +1,42 @@
-**Real-Time Weather Monitoring System**
+## ESP8266/ESP32 Weather Monitoring and Control System
+
 
 ## Description
 
-The Real-Time Weather Monitoring System is an innovative project that aims to provide live weather data and updates from various sensors. This system utilizes a combination of hardware sensors, a data processing backend, and a user-friendly web interface to offer real-time and periodic weather information to users.
+The ESP8266/ESP32 Weather Monitoring and Control System is a versatile IoT project that enables users to monitor real-time environmental data and control connected devices remotely. The system utilizes ESP8266 or ESP32 microcontrollers as the central processing units, providing Wi-Fi connectivity and hosting a web server to interact with users.
 
 ## Features
 
-- Live Data Streaming: The system allows sensors for lightning, wind direction, wind speed, and rainfall to transmit live data, ensuring users receive real-time weather updates.
+- Real-time Monitoring: The system can continuously monitor various environmental parameters in real-time, such as temperature, humidity, pressure, light intensity, lightning distance, wind direction, wind speed, and rain detection.
 
-- Periodic Updates: Other sensors, such as temperature, humidity, and atmospheric pressure, transmit data at regular intervals of 1 minute, providing timely and accurate information.
+- Web Interface: A user-friendly web interface allows users to access sensor data and control connected devices from any web-enabled device, such as smartphones, tablets, or computers.
 
-- Interactive Web Interface: The web-based user interface offers an intuitive and interactive platform for users to access weather data from different sensors and view live updates.
+- Rain Detection: The system is equipped with a rain detection sensor (3144 Hall Sensor) to detect rain and display its status on the web interface.
 
-- Sensor Status Indication: The interface visually displays the status of each sensor, distinguishing real-time data sources from periodic ones.
+- Control Actions: Users can remotely control connected devices using the web interface, enabling them to turn on or off devices based on sensor data or user preferences.
 
-- Historical Data: Users can access historical weather data through the system, facilitating trend analysis and long-term planning.
+- Separation of Data: The web interface clearly separates real-time sensor data from data with a 1-minute update interval, providing a comprehensive and organized view of environmental conditions.
 
-## Setup and Installation
+## Components
 
-1. Clone the repository to your local machine.
-2. Install the required dependencies as mentioned in the documentation.
-3. Connect the hardware sensors to the system and ensure proper configuration.
-4. Run the backend server and start data processing.
-5. Access the web interface to view live weather updates and periodic sensor data.
+- ESP8266 or ESP32 microcontroller
+- DHT22 Temperature and Humidity Sensor
+- BMP280 Pressure Sensor
+- GY-30 Light Sensor (BH1750)
+- AS3935 Lightning Detector
+- AS5600 Hall Sensor for Wind Direction
+- 3144 Hall Sensor for Wind Speed and Rain Detection
 
-## Usage
+## Setup and Usage
 
-1. Open the web interface in your preferred web browser.
-2. Navigate through different sections to access real-time and periodic weather data.
-3. Check the status of sensors and monitor live weather changes.
-4. Use the historical data feature to analyze past weather patterns.
+1. Install the Arduino IDE and ESP8266/ESP32 board support as per the instructions provided in the project documentation.
 
-## Contributing
+2. Upload the provided Arduino sketch (`main.ino`) to the ESP8266/ESP32 board.
 
-Contributions to the Real-Time Weather Monitoring System are welcome! If you have any bug fixes, enhancements, or new features to propose, please submit a pull request. For major changes, please open an issue first to discuss the modifications.
+3. Connect the sensors to the appropriate GPIO pins on the ESP8266/ESP32.
 
-## License
+4. Power up the ESP8266/ESP32 board and connect it to your Wi-Fi network.
 
-This project is licensed under the [MIT License](link-to-license-file), which allows you to use, modify, and distribute the code freely. Refer to the [LICENSE](link-to-license-file) file for more details.
+5. Access the web interface by entering the IP address of the ESP8266/ESP32 in a web browser.
 
-## Acknowledgments
-
-We would like to express our gratitude to all contributors and developers who have made this project possible. Special thanks to the open-source community for their valuable contributions and support.
-
-Thank you for using the Real-Time Weather Monitoring System. We hope it proves to be a useful tool for monitoring weather conditions and providing valuable insights for your applications. If you encounter any issues or have any suggestions, please feel free to contact us or open an issue.
-
-Happy weather monitoring!
+6. The web interface will display real-time sensor data and control options for connected devices.
