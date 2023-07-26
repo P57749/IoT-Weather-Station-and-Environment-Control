@@ -22,5 +22,5 @@ function updateSensorData(data) {
   }
   
   setInterval(fetchSensorData, 5000); // Fetch sensor data every 5 seconds
-  fetchSensorData(); // Fetch sensor data on page load
+  fetchSensorData(); // Fetch sensor data on page load.
   
