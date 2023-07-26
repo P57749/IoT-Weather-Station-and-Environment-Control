@@ -7,15 +7,18 @@
 <body>
   <div class="container">
     <h1>ESP Control Panel</h1>
-    <div class="sensor-data">
-      <p id="temperature">Temperature: N/A °C</p>
-      <p id="humidity">Humidity: N/A %</p>
-      <p id="pressure">Pressure: N/A Pa</p>
+    <div class="real-time-data">
       <p id="light">Light: N/A lx</p>
       <p id="lightning">Lightning Distance: N/A km</p>
       <p id="wind_direction">Wind Direction: N/A degrees</p>
       <p id="wind_speed">Wind Speed: N/A Hz</p>
-      <!-- Add sensor data for rain detection from the 3144 Hall Sensor if available -->
+      <p id="rainfall">Rainfall: N/A</p>
+    </div>
+    <div class="one-minute-update">
+      <p id="temperature">Temperature: N/A °C</p>
+      <p id="humidity">Humidity: N/A %</p>
+      <p id="pressure">Pressure: N/A Pa</p>
+      <!-- Add the sensor data for other sensors with 1-minute update interval -->
     </div>
     <button class="button" onclick="sendControlAction('/on')">Turn On</button>
     <button class="button" onclick="sendControlAction('/off')">Turn Off</button>
@@ -23,4 +26,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

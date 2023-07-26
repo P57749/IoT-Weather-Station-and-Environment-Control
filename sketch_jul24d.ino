@@ -37,14 +37,28 @@ AsyncWebServer server(80);
 
 void handleRoot() {
   String json = "{";
-  json += "\"temperature\": " + String(dht.readTemperature()) + ",";
-  json += "\"humidity\": " + String(dht.readHumidity()) + ",";
-  json += "\"pressure\": " + String(bmp.readPressure()) + ",";
-  json += "\"light\": " + String(gy30.readLightLevel()) + ",";
+  
+  // Read and include real-time sensor data (ray, wind direction, wind speed, rainfall)
   json += "\"lightning\": " + String(as3935.getStrikeDistanceKm()) + ",";
   json += "\"wind_direction\": " + String(as5060.getHeadingDegrees()) + ",";
   json += "\"wind_speed\": " + String(hallSensor.getPulseFrequency()) + ",";
-  // Add the sensor data for rain detection from the 3144 Hall Sensor if available
+  json += "\"rainfall\": " + (hallSensor.getPulseFrequency() > 0 ? "true" : "false") + ",";
+  
+  // Read and include sensor data with 1-minute update interval
+  static unsigned long previousMillis = 0;
+  const long interval = 60000; // 1 minute interval
+  
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= interval) {
+    previousMillis = currentMillis;
+    
+    json += "\"temperature\": " + String(dht.readTemperature()) + ",";
+    json += "\"humidity\": " + String(dht.readHumidity()) + ",";
+    json += "\"pressure\": " + String(bmp.readPressure()) + ",";
+    json += "\"light\": " + String(gy30.readLightLevel()) + ",";
+    // Add the sensor data for other sensors with 1-minute update interval
+  }
+
   json += "}";
   server.send(200, "application/json", json);
 }
@@ -97,4 +111,5 @@ void setup() {
 
 void loop() {
   server.handleClient();
+  // Add any other necessary code here
 }
