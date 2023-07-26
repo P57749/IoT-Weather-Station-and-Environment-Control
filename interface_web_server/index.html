@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESP Control Panel</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ESP Control Panel</h1>
+    <div class="sensor-data">
+      <p id="temperature">Temperature: N/A °C</p>
+      <p id="humidity">Humidity: N/A %</p>
+      <p id="pressure">Pressure: N/A Pa</p>
+      <!-- Add sensor data from the SY300 sensor if available -->
+    </div>
+    <button class="button" onclick="sendControlAction('/on')">Turn On</button>
+    <button class="button" onclick="sendControlAction('/off')">Turn Off</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
