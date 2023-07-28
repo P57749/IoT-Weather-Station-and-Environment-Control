@@ -1,25 +1,74 @@
 body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  background-color: #2b2b2b;
+}
+
+h1 {
+  text-align: center;
+  color: #4CAF50;
+}
+
+h2 {
+  color: #4CAF50;
+}
+
+.real-time-data {
+  padding: 10px;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.real-time-data h2 {
   text-align: center;
 }
 
-.sensor-data {
-  font-size: 24px;
-  margin-bottom: 10px;
+.real-time-data p {
+  margin: 5px 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+.non-real-time-data,
+.battery-status {
+  padding: 10px;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.non-real-time-data h2,
+.battery-status h2 {
+  color: #4CAF50;
+}
+
+.non-real-time-data p,
+.battery-status p {
+  margin: 5px 0;
 }
 
 .button {
-  display: inline-block;
-  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
   background-color: #4CAF50;
   color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-  
+
+.button:hover {
+  background-color: #45a049;
+}

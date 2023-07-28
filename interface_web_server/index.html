@@ -7,19 +7,38 @@
 <body>
   <div class="container">
     <h1>ESP Control Panel</h1>
+    <!-- Time Display Section -->
+    <div class="current-time">
+      <h2>Current Time</h2>
+      <p id="current_time">N/A</p>
+    </div>
+
+    <!-- Real-Time Data Section -->
     <div class="real-time-data">
+      <h2>Real-Time Data</h2>
       <p id="light">Light: N/A lx</p>
       <p id="lightning">Lightning Distance: N/A km</p>
       <p id="wind_direction">Wind Direction: N/A degrees</p>
       <p id="wind_speed">Wind Speed: N/A Hz</p>
       <p id="rainfall">Rainfall: N/A</p>
     </div>
-    <div class="one-minute-update">
+
+    <!-- Non-Real-Time Data Section -->
+    <div class="non-real-time-data">
+      <h2>Non-Real-Time Data</h2>
       <p id="temperature">Temperature: N/A °C</p>
       <p id="humidity">Humidity: N/A %</p>
       <p id="pressure">Pressure: N/A Pa</p>
-      <!-- Add the sensor data for other sensors with 1-minute update interval -->
+      <!-- Add the sensor data for other non-real-time sensors here -->
     </div>
+
+    <!-- Battery Status Section -->
+    <div class="battery-status">
+      <h2>Battery Status</h2>
+      <p id="battery_level">Battery Level: N/A</p>
+      <p id="battery_status">Battery Status: N/A</p>
+    </div>
+
     <button class="button" onclick="sendControlAction('/on')">Turn On</button>
     <button class="button" onclick="sendControlAction('/off')">Turn Off</button>
   </div>

@@ -1,4 +1,5 @@
 function updateRealTimeData(data) {
+  document.getElementById("current_time").textContent = data.datetime;
   document.getElementById("light").textContent = "Light: " + data.light + " lx";
   document.getElementById("lightning").textContent = "Lightning Distance: " + data.lightning + " km";
   document.getElementById("wind_direction").textContent = "Wind Direction: " + data.wind_direction + " degrees";
